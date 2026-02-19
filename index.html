@@ -1,0 +1,121 @@
+<!---- Pagina Home contenente Header, Hero Section, Sezione Catalogo, News, Footer ---->
+<!DOCTYPE html>
+<html lang="pt-br"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEKO - Lar</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="stylesheet" href="css/tema.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+  <!---- HEADER ---->
+  <!-- Creo un container per il logo e il menu -->
+  <header class="site-header">
+    <div class="header-container">
+      <!-- Logo -->
+      <a href="index.html" class="logo" aria-label="Homepage">
+        <img src="images/logo brasil Bianco-png.png" alt="Logotipo DEKO"/>
+      </a>
+      <!-- Menu -->
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li><a href="index.html" class="nav-link">Lar</a></li>
+          <li><a href="contatti.html" class="nav-link">Contatos</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!---- HERO SECTION ---->
+  <!-- Creo un container -->
+  <section class="home-hero">
+    <!-- Creo una griglia di immagini per il background -->
+    <div class="hero-background-grid">
+      <div class="hero-bg-image" style="background-image: url('images/img%20Brasil/foto-da-fachada3.jpeg'); background-size: cover;"></div>
+      <div class="hero-bg-image" style="background-image: url('images/img%20Brasil/armazen2.jpeg'); background-size: cover;"></div>
+      <div class="hero-bg-image" style="background-image: url('images/img%20Brasil/laboratorio.jpeg'); background-size: cover;"></div>
+      <div class="hero-bg-image" style="background-image: url('images/img%20Brasil/escritorio2.jpeg'); background-size: cover;"></div>
+    </div>
+    <!-- Creo il contenuto della sezione con il testo -->
+    <div class="home-hero__content">
+      <p class="home-hero__kicker">DEKO IMPORTACAO E COMERCIO ATACADISTA DE TINTAS</p>
+      <h1 class="home-hero__title">
+        <span class="home-hero__title-main">INOVAÇÃO</span>
+        <span class="home-hero__title-accent">NAS COBERTURAS</span>
+      </h1>
+      <p class="home-hero__subtitle">Soluções antiaderentes para utensílios de cozinha e indústria.</p>
+      <a href="contatti.html" class="home-hero__btn">CONTATE-NOS</a> <!-- Bottone che reindirizza alla pagina dei contatti -->
+    </div>
+  </section>
+
+  <!---- SEZIONE CATALOGO, NEWS, SITO ---->
+  <section class="showcase-grid">
+    <div class="container">
+      <h2 class="section-title">NOTÍCIAS E EVENTOS</h2>
+      <!-- Griglia con 3 colonne-->
+      <div class="grid-3-cols">
+        <!-- Item 1: Catalogo Deko 2026 -->
+        <div class="grid-item catalog-item">
+          <div class="item-media">
+            <img src="images/catalogo-cover.png" alt="Catálogo Deko 2026">
+            <span class="item-badge">CATÁLOGO</span> <!-- Badge per identificare la categoria dell'item -->
+          </div>
+          <div class="item-content">
+            <h3>Catálogo 2026</h3>
+            <p>Descubra todas as novidades da nova coleção.</p>
+            <a href="documents/Cat-26.pdf" target="_blank" class="item-link">Baixar PDF →</a> <!-- Link al PDF del catalogo -->
+          </div>
+        </div>
+          
+        <!-- Item 2: News Deko Kustom -->
+        <div class="grid-item news-item">
+          <div class="item-media">
+            <img src="images/dekokustom.png" alt="Deko Kustom">
+            <span class="item-badge">NOTÍCIAS</span> <!-- Badge per identificare la categoria dell'item -->
+          </div>
+          <div class="item-content">
+            <h3>DEKO KUSTOM</h3>
+            <p>Personalização sob medida para seus projetos</p>
+            <a href="https://www.dekokustom.com/" target="_blank" class="item-link">Saiba mais →</a> <!-- Link al sito di Deko Kustom -->
+          </div>
+        </div>
+          
+        <!-- Item 3: Sito Internet Deko IT -->
+        <div class="grid-item event-item">
+          <div class="item-media">
+            <img src="images/azienda.png" alt="Agência">
+            <span class="item-badge">EMPRESA ITÁLIA</span> <!-- Badge per identificare la categoria dell'item -->
+          </div>
+          <div class="item-content">
+            <h3>Deko Srl - Itália</h3>
+            <p>Experiência, qualidade e inovação em revestimentos.</p>
+            <a href="https://www.dekosrl.com/azienda/" target="_blank" class="item-link">Visite o site →</a> <!-- Link al sito di Deko Srl Italia -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!---- FOOTER ---->
+<!-- Footer con informazioni legali e link a altre informazioni -->
+  <footer class="site-footer">
+    <div class="legal">
+      <div class="legal-text">
+        <p>© 2026 - DEKO IMPORTACAO E COMERCIO ATACADISTA DE TINTAS</p>
+        <p>P.I. 04291320960 - C.F. 04291320960</p>
+        <p>Capital social integralizado de 1,0 milhão</p>
+        <p>REA MI - 1992102</p>
+      </div>
+      <ul class="legal-links">
+        <li><a href="/privacy-policy/">Política de Privacidade</a></li>
+        <li><a href="/cookie-policy/">Política de Cookies</a></li>
+      </ul>
+    </div>
+  </footer>
+</body>
+</html>

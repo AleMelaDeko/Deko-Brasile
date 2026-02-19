@@ -1,0 +1,515 @@
+/* CSS per la home - include anche stili per la griglia showcase */
+@import url('tema.css'); /* Importo il tema base per mantenere coerenza con il resto del sito */
+
+/* ---- HERO SECTION CON 4 IMMAGINI STATICHE ---- */
+.home-hero {
+  height: 90vh;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+/* Contenitore per le 4 immagini */
+.hero-background-grid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 1.2;
+  opacity: 1;
+  box-sizing: border-box;
+  /* Padding SOLO in alto e in basso (nessun padding a sinistra/destra) */
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 0;
+  padding-right: 0;
+  /* Gap per lo spazio tra le immagini */
+  gap: 10px;
+}
+
+/* Ogni immagine occupa tutta la larghezza disponibile */
+/* Uso !important per sovrascrivere eventuali stili ereditati */
+.hero-bg-image {
+  width: calc(50% - 5px) !important; /* Sottrae metà del gap per mantenere 2 colonne */
+  height: calc(50% - 5px) !important; 
+  object-fit: cover !important;
+  display: block !important;
+  box-sizing: border-box;
+  background-position: center center !important;
+  /* Nessun bordo, nessun effetto */
+  border: none;
+  border-radius: 0;
+  transition: none;
+}
+
+/* Rimuovi qualsiasi effetto hover */
+.hero-bg-image:hover {
+  transform: none;
+  border: none;
+  box-shadow: none;
+}
+
+/* Overlay scuro per leggibilità testo */
+.home-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, 
+    rgba(0, 0, 0, 0.7) 0%, 
+    rgba(0, 39, 118, 0.4) 40%,
+    rgba(0, 156, 59, 0.3) 70%,
+    rgba(255, 223, 0, 0.1) 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Contenuto del hero sopra l'overlay */
+.home-hero__content {
+  max-width: 1000px;
+  position: relative;
+  z-index: 6; 
+  padding: 40px;
+}
+
+/* Titolo e sottotitolo del hero */
+/* Text-shadow per effetto neon */
+.home-hero__kicker {
+  color: #FFDF00;
+  font-size: 16px;
+  letter-spacing: 5px;
+  margin-bottom: 25px;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-shadow: 0 0 4px #000000, 0 0 10px #000000, 0 0 20px #000000;
+}
+
+/* Titolo principale del hero */
+.home-hero__title {
+  margin-bottom: 30px;
+}
+
+/* Parte del titolo con effetto neon */
+.home-hero__title-main {
+  display: block;
+  font-size: clamp(42px, 7vw, 70px);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  letter-spacing: 3px;
+  text-shadow: 0 0 4px #000000, 0 0 10px #000000, 0 0 20px #000000;
+}
+
+/* Parte del titolo con effetto neon */
+.home-hero__title-accent {
+  display: block;
+  font-size: clamp(48px, 8vw, 80px);
+  font-weight: 800;
+  color: #009C3B;
+  line-height: 1.2;
+  letter-spacing: 3px;
+  text-shadow: 0 0 2px #000000, 0 0 5px #000000, 0 0 10px #000000;
+}
+
+/* Sottotitolo dell' hero */
+.home-hero__subtitle {
+  color: #fff;
+  font-size: 20px;
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7;
+  text-shadow: 0 0 2px #000000, 0 0 5px #000000, 0 0 10px #000000;
+}
+
+/* Bottone dell' hero */
+.home-hero__btn {
+  display: inline-block;
+  padding: 18px 55px;
+  background: #009C3B;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 18px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  box-shadow: 0 8px 25px rgba(0, 156, 59, 0.5);
+}
+
+/* Effetto hover sul bottone */
+.home-hero__btn:hover {
+  background: transparent;
+  border-color: #009C3B;
+  color: #009C3B;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 156, 59, 0.6);
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 1200px) {
+  .home-hero {
+    height: 85vh;
+  }
+}
+
+@media (max-width: 900px) {
+  .home-hero {
+    height: 80vh;
+    min-height: 600px;
+  }
+  
+  .hero-background-grid {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    gap: 15px;
+  }
+  
+  .hero-bg-image {
+    width: calc(50% - 7.5px) !important;
+    height: calc(50% - 7.5px) !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-hero {
+    height: 70vh;
+    min-height: 500px;
+  }
+  
+  .hero-background-grid {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    gap: 10px;
+  }
+  
+  .hero-bg-image {
+    width: calc(50% - 5px) !important;
+    height: calc(50% - 5px) !important;
+  }
+  
+  .home-hero__kicker {
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+  }
+  
+  .home-hero__title-main {
+    font-size: 28px;
+  }
+  
+  .home-hero__title-accent {
+    font-size: 32px;
+  }
+  
+  .home-hero__subtitle {
+    font-size: 16px;
+    margin-bottom: 25px;
+  }
+  
+  .home-hero__btn {
+    padding: 14px 40px;
+    font-size: 15px;
+  }
+}
+
+/* ---- SHOWCASE GRID 3 COLONNE ---- */
+/* Sezione con griglia a 3 colonne per cataloghi, news ed eventi */
+.showcase-grid {
+  padding: 80px 0 100px;
+  background: #000;
+}
+
+/* Contenitore per la griglia */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Titolo della sezione */
+.section-title {
+  font-size: 36px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 60px;
+  color: #fff;
+  letter-spacing: 2px;
+  position: relative;
+}
+
+/* Titolo al centro con decorazione sottostante */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, #FFDF00, #009C3B);
+  margin: 20px auto 0;
+  border-radius: 2px;
+}
+
+/* Griglia a 3 colonne */
+.grid-3-cols {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+/* Seconda riga della griglia */
+.second-row {
+  margin-top: 30px;
+}
+
+/* Item della griglia */
+.grid-item {
+  background: #111;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 223, 0, 0.15);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* Effetto hover sull'item */
+.grid-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FFDF00, #009C3B, #002776);
+  transform: translateX(-100%);
+  transition: transform 0.6s ease;
+  z-index: 2;
+}
+
+/* Effetto hover sull'item */
+.grid-item:hover {
+  transform: translateY(-10px);
+  border-color: #009C3B;
+  box-shadow: 0 25px 50px rgba(0, 156, 59, 0.3);
+  background: #151515;
+}
+
+/* Effetto hover sull'item */
+.grid-item:hover::before {
+  transform: translateX(0);
+}
+
+/* Immagine */
+.item-media {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+/* Immagine */
+.item-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease;
+}
+
+/* Effetto hover sull'immagine */
+.grid-item:hover .item-media img {
+  transform: scale(1.1); /* Leggero zoom sull'immagine al passaggio del mouse */
+}
+
+/* Badge */
+.item-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: #FFDF00;
+  color: #000;
+  padding: 6px 15px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 3;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Contenuto */
+.item-content {
+  padding: 25px 20px 20px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Titolo */
+.item-content h3 {
+  color: #FFDF00;
+  font-size: 20px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Descrizione */
+.item-content p {
+  color: #cfcfcf;
+  font-size: 14px;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+/* Link */
+.item-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s;
+  display: inline-block;
+  align-self: flex-start;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 2px;
+}
+
+/* Effetto hover sul link */
+.item-link:hover {
+  color: #009C3B;
+  border-bottom-color: #009C3B;
+  transform: translateX(5px);
+}
+
+/* Badge colorati per tipo */
+.catalog-item .item-badge {
+  background: #009C3B;
+  color: #fff;
+}
+
+.news-item .item-badge {
+  background: #FFDF00;
+  color: #000;
+}
+
+.event-item .item-badge {
+  background: #002776;
+  color: #fff;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 900px) {
+  .grid-3-cols {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .home-hero {
+    height: 70vh;
+  }
+  
+  .home-hero__title-accent {
+    font-size: clamp(38px, 6vw, 50px);
+  }
+  
+  .section-title {
+    font-size: 30px;
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .grid-3-cols {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .showcase-grid {
+    padding: 50px 0 70px;
+  }
+  
+  .home-hero {
+    height: 60vh;
+  }
+  
+  .home-hero__kicker {
+    font-size: 12px;
+    letter-spacing: 3px;
+  }
+  
+  .home-hero__title-main {
+    font-size: 28px;
+  }
+  
+  .home-hero__title-accent {
+    font-size: 32px;
+  }
+  
+  .home-hero__subtitle {
+    font-size: 16px;
+    padding: 0 15px;
+  }
+  
+  .home-hero__btn {
+    padding: 14px 35px;
+    font-size: 14px;
+  }
+  
+  .section-title {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+  
+  .section-title::after {
+    width: 60px;
+    height: 3px;
+  }
+  
+  .item-media {
+    height: 200px;
+  }
+  
+  .item-content h3 {
+    font-size: 18px;
+  }
+}
+
+/* ---- ANIMAZIONI ---- */
+/* Animazione di fade-in e slide-up per gli item della griglia */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Applico l'animazione a ogni item della griglia con un delay progressivo */
+.grid-item {
+  animation: fadeInUp 0.6s ease forwards;
+  opacity: 0;
+}
+
+.grid-item:nth-child(1) { animation-delay: 0.1s; } 
+.grid-item:nth-child(2) { animation-delay: 0.2s; }
+.grid-item:nth-child(3) { animation-delay: 0.3s; }

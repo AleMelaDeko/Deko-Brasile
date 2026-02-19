@@ -1,0 +1,125 @@
+/* Stile per l'header del sito */
+
+/* Stile per l'intestazione del sito */
+.header-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background: rgba(23, 23, 23, 0); /* Sfondo nero semitrasparente */
+  backdrop-filter: blur(10px); /* Effetto di sfocatura */
+  z-index: 1000;
+  border-bottom: 2px solid var(--verde); /* Bordo verde sempre visibile */
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 20px var(--verde); /* Ombra verde costante */
+}
+
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+/* Stile per il logo nell'header */
+.logo {
+  display: flex;
+  align-items: center;
+  /*background: rgba(255, 255, 255, 0.1);  Sfondo chiaro semitrasparente */
+  /*border-radius: 50px;
+  border: 2px solid #ffffff;  Bordo giallo spesso 
+  box-shadow: 0 0 20px #002776; /* Effetto glow giallo */
+}
+
+/* Stile per l'immagine del logo */
+.logo img {
+  height: 80px;
+  width: auto;
+  /*filter: brightness(1.3) contrast(1.2) drop-shadow(0 0 5px #ffffff);
+   Filtro per schiarire e aggiungere glow */
+}
+
+/* Stile per il menu nell'header */
+.main-nav .nav-list {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+/* Stile per i link nel menu */
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  transition: color 0.3s; /* color é la proprietà che cambia al passaggio del mouse */
+  letter-spacing: 1px;
+  padding: 5px 0;
+  border-bottom: 2px solid transparent;
+}
+
+/* Stile per i link nel menu al passaggio del mouse */
+.nav-link:hover {
+  color: #FFDF00;
+  border-bottom-color: #FFDF00;
+}
+
+body {
+  padding-top: 100px;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+  .site-header {
+    height: 80px;
+  }
+  
+  .logo {
+    padding: 5px 20px;
+  }
+  
+  .logo img {
+    height: 45px;
+  }
+  
+  .main-nav .nav-list {
+    gap: 20px;
+  }
+  
+  body {
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    height: 80px;
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+  
+  .main-nav .nav-list {
+    gap: 20px;
+  }
+  
+  body {
+    padding-top: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-container {
+    padding: 0 15px;
+  }
+  
+  .nav-link {
+    font-size: 14px;
+  }
+}
