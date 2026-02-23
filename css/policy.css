@@ -29,11 +29,11 @@
 
 /* Contenuto dell' hero */
 .policy-hero-inner{
-  position:relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 90vw;
-  padding: 44px 0 38px;
+  position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 90vw;
+    padding: 44px 0 38px;
 }
 
 /* Stile per l'eyebrow del hero, cioè il testo sopra il titolo */

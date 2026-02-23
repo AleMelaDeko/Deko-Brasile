@@ -30,8 +30,8 @@
   /* Padding SOLO in alto e in basso (nessun padding a sinistra/destra) */
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 0;
-  padding-right: 0;
+  padding-left: 10px;
+  padding-right: 10px;
   /* Gap per lo spazio tra le immagini */
   gap: 10px;
 }
@@ -43,6 +43,7 @@
   height: calc(50% - 5px) !important; 
   background-size: cover !important;
   background-repeat: no-repeat !important;
+  background-position: center center !important;
   display: block !important;
   box-sizing: border-box;
   /* Nessun bordo, nessun effetto */
@@ -53,13 +54,6 @@
 
 .hero-bg-image:nth-child(4) {
   background-position: 30% center !important; /* Sposta il focus a sinistra */
-  /* Valori da provare:
-     20% = molto a sinistra
-     25% = abbastanza a sinistra
-     30% = moderatamente a sinistra (consigliato)
-     35% = leggermente a sinistra
-     40% = appena a sinistra
-  */
 }
 
 /* Rimuovi qualsiasi effetto hover */
