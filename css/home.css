@@ -41,14 +41,25 @@
 .hero-bg-image {
   width: calc(50% - 5px) !important; /* Sottrae metà del gap per mantenere 2 colonne */
   height: calc(50% - 5px) !important; 
-  object-fit: cover !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
   display: block !important;
   box-sizing: border-box;
-  background-position: center center !important;
   /* Nessun bordo, nessun effetto */
   border: none;
   border-radius: 0;
   transition: none;
+}
+
+.hero-bg-image:nth-child(4) {
+  background-position: 30% center !important; /* Sposta il focus a sinistra */
+  /* Valori da provare:
+     20% = molto a sinistra
+     25% = abbastanza a sinistra
+     30% = moderatamente a sinistra (consigliato)
+     35% = leggermente a sinistra
+     40% = appena a sinistra
+  */
 }
 
 /* Rimuovi qualsiasi effetto hover */
@@ -157,73 +168,6 @@
   color: #009C3B;
   transform: translateY(-5px);
   box-shadow: 0 15px 35px rgba(0, 156, 59, 0.6);
-}
-
-/* ---- RESPONSIVE ---- */
-@media (max-width: 1200px) {
-  .home-hero {
-    height: 85vh;
-  }
-}
-
-@media (max-width: 900px) {
-  .home-hero {
-    height: 80vh;
-    min-height: 600px;
-  }
-  
-  .hero-background-grid {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    gap: 15px;
-  }
-  
-  .hero-bg-image {
-    width: calc(50% - 7.5px) !important;
-    height: calc(50% - 7.5px) !important;
-  }
-}
-
-@media (max-width: 600px) {
-  .home-hero {
-    height: 70vh;
-    min-height: 500px;
-  }
-  
-  .hero-background-grid {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    gap: 10px;
-  }
-  
-  .hero-bg-image {
-    width: calc(50% - 5px) !important;
-    height: calc(50% - 5px) !important;
-  }
-  
-  .home-hero__kicker {
-    font-size: 12px;
-    letter-spacing: 3px;
-    margin-bottom: 15px;
-  }
-  
-  .home-hero__title-main {
-    font-size: 28px;
-  }
-  
-  .home-hero__title-accent {
-    font-size: 32px;
-  }
-  
-  .home-hero__subtitle {
-    font-size: 16px;
-    margin-bottom: 25px;
-  }
-  
-  .home-hero__btn {
-    padding: 14px 40px;
-    font-size: 15px;
-  }
 }
 
 /* ---- SHOWCASE GRID 3 COLONNE ---- */
@@ -415,43 +359,60 @@
 }
 
 /* ---- RESPONSIVE ---- */
-@media (max-width: 900px) {
-  .grid-3-cols {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
-  
+@media (max-width: 1200px) {
   .home-hero {
-    height: 70vh;
+    height: 85vh;
+  }
+
+  .hero-bg-image:nth-child(4) {
+    background-position: 85% center !important; /* Sposta il focus leggermente a sinistra */
+  }
+}
+
+@media (max-width: 900px) {
+  .home-hero {
+    height: 80vh;
+    min-height: 600px;
+  }
+
+  /* Regolazione per mobile */
+  .hero-bg-image:nth-child(4) {
+    background-position: 85% center !important;
   }
   
-  .home-hero__title-accent {
-    font-size: clamp(38px, 6vw, 50px);
+  .hero-background-grid {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    gap: 15px;
   }
   
-  .section-title {
-    font-size: 30px;
-    margin-bottom: 40px;
+  .hero-bg-image {
+    width: calc(50% - 7.5px) !important;
+    height: calc(50% - 7.5px) !important;
   }
 }
 
 @media (max-width: 600px) {
-  .grid-3-cols {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-  
-  .showcase-grid {
-    padding: 50px 0 70px;
-  }
-  
   .home-hero {
-    height: 60vh;
+    height: 70vh;
+    min-height: 500px;
+  }
+  
+  .hero-background-grid {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    gap: 10px;
+  }
+  
+  .hero-bg-image {
+    width: calc(50% - 5px) !important;
+    height: calc(50% - 5px) !important;
   }
   
   .home-hero__kicker {
     font-size: 12px;
     letter-spacing: 3px;
+    margin-bottom: 15px;
   }
   
   .home-hero__title-main {
@@ -464,30 +425,12 @@
   
   .home-hero__subtitle {
     font-size: 16px;
-    padding: 0 15px;
+    margin-bottom: 25px;
   }
   
   .home-hero__btn {
-    padding: 14px 35px;
-    font-size: 14px;
-  }
-  
-  .section-title {
-    font-size: 26px;
-    margin-bottom: 30px;
-  }
-  
-  .section-title::after {
-    width: 60px;
-    height: 3px;
-  }
-  
-  .item-media {
-    height: 200px;
-  }
-  
-  .item-content h3 {
-    font-size: 18px;
+    padding: 14px 40px;
+    font-size: 15px;
   }
 }
 
