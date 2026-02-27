@@ -71,26 +71,142 @@
   color: #FFDF00;
 }
 
-/* ---- RESPONSIVE ---- */
-@media (max-width: 600px) {
+/* ===== MEDIA QUERIES ===== */
+
+/* Tablet (996px) */
+@media screen and (max-width: 996px) {
   .site-footer {
-    padding: 30px 16px;
-    margin-top: 40px;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  
+  .legal-links {
+    gap: 25px;
+  }
+  
+  .legal-links li:not(:last-child)::after {
+    right: -15px;
+  }
+}
+
+/* Tablet (768px) */
+@media screen and (max-width: 768px) {
+  .site-footer {
+    padding-left: 40px;
+    padding-right: 40px;
+    padding-top: 35px;
+    padding-bottom: 35px;
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
   
   .legal {
     flex-direction: column;
-    text-align: center;
+    align-items: flex-start;
     gap: 15px;
+  }
+  
+  .legal-text p {
+    font-size: 13px;
+    margin: 3px 0;
+  }
+  
+  .legal-links {
+    gap: 20px;
+  }
+  
+  .legal-links a {
+    font-size: 13px;
+  }
+  
+  .legal-links li:not(:last-child)::after {
+    right: -12px;
+  }
+}
+
+/* Mobile (480px) */
+@media screen and (max-width: 480px) {
+  .site-footer {
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+  
+  .legal {
+    gap: 20px;
+  }
+  
+  .legal-text p {
+    font-size: 12px;
+    line-height: 1.5;
   }
   
   .legal-links {
     flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+    gap: 15px;
+    row-gap: 10px;
+  }
+  
+  .legal-links li {
+    width: auto;
   }
   
   .legal-links li:not(:last-child)::after {
+    content: '';
     display: none;
+  }
+  
+  .legal-links a {
+    font-size: 12px;
+    padding: 5px 0;
+    display: inline-block;
+  }
+  
+  /* Aggiungiamo un separatore visivo alternativo */
+  .legal-links li:not(:last-child) {
+    border-right: 1px solid rgba(255, 223, 0, 0.3);
+    padding-right: 12px;
+  }
+}
+
+/* Mobile piccolo (360px) */
+@media screen and (max-width: 360px) {
+  .site-footer {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .legal {
+    gap: 15px;
+  }
+  
+  .legal-text p {
+    font-size: 10px;
+    margin: 2px 0;
+  }
+  
+  .legal-links {
+    gap: 10px;
+    row-gap: 8px;
+    width: 100%;
+  }
+  
+  .legal-links li:not(:last-child) {
+    border-right: 1px solid rgba(255, 223, 0, 0.2);
+    padding-right: 8px;
+  }
+  
+  .legal-links a {
+    font-size: 11px;
+    white-space: nowrap;
   }
 }

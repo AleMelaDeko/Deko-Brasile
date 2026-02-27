@@ -352,82 +352,6 @@
   color: #fff;
 }
 
-/* ---- RESPONSIVE ---- */
-@media (max-width: 1200px) {
-  .home-hero {
-    height: 85vh;
-  }
-
-  .hero-bg-image:nth-child(4) {
-    background-position: 85% center !important; /* Sposta il focus leggermente a sinistra */
-  }
-}
-
-@media (max-width: 1100px) {
-  .home-hero {
-    height: 80vh;
-    min-height: 600px;
-  }
-
-  /* Regolazione per mobile */
-  .hero-bg-image:nth-child(4) {
-    background-position: 85% center !important;
-  }
-  
-  .hero-background-grid {
-    padding-top: 15px;
-    padding-bottom: 15px;
-    gap: 15px;
-  }
-  
-  .hero-bg-image {
-    width: calc(50% - 7.5px) !important;
-    height: calc(50% - 7.5px) !important;
-  }
-}
-
-@media (max-width: 600px) {
-  .home-hero {
-    height: 70vh;
-    min-height: 500px;
-  }
-  
-  .hero-background-grid {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    gap: 10px;
-  }
-  
-  .hero-bg-image {
-    width: calc(50% - 5px) !important;
-    height: calc(50% - 5px) !important;
-  }
-  
-  .home-hero__kicker {
-    font-size: 12px;
-    letter-spacing: 3px;
-    margin-bottom: 15px;
-  }
-  
-  .home-hero__title-main {
-    font-size: 28px;
-  }
-  
-  .home-hero__title-accent {
-    font-size: 32px;
-  }
-  
-  .home-hero__subtitle {
-    font-size: 16px;
-    margin-bottom: 25px;
-  }
-  
-  .home-hero__btn {
-    padding: 14px 40px;
-    font-size: 15px;
-  }
-}
-
 /* ---- ANIMAZIONI ---- */
 /* Animazione di fade-in e slide-up per gli item della griglia */
 @keyframes fadeInUp {
@@ -450,3 +374,308 @@
 .grid-item:nth-child(1) { animation-delay: 0.1s; } 
 .grid-item:nth-child(2) { animation-delay: 0.2s; }
 .grid-item:nth-child(3) { animation-delay: 0.3s; }
+
+/* ===== MEDIA QUERIES ===== */
+
+/* Tablet (996px) */
+@media screen and (max-width: 996px) {
+  .home-hero {
+    min-height: 600px;
+  }
+  
+  .home-hero__content {
+    max-width: 800px;
+    padding: 30px;
+  }
+  
+  .home-hero__title-main {
+    font-size: clamp(38px, 6vw, 60px);
+  }
+  
+  .home-hero__title-accent {
+    font-size: clamp(42px, 7vw, 70px);
+  }
+  
+  .home-hero__subtitle {
+    font-size: 18px;
+  }
+  
+  .grid-3-cols {
+    gap: 25px;
+  }
+  
+  .item-media {
+    height: 200px;
+  }
+  
+  .section-title {
+    font-size: 32px;
+    margin-bottom: 50px;
+  }
+}
+
+/* Tablet (768px) */
+@media screen and (max-width: 768px) {
+  .home-hero {
+    min-height: 550px;
+  }
+  
+  .hero-background-grid {
+    gap: 8px;
+    padding: 8px;
+  }
+  
+  .hero-bg-image {
+    width: calc(50% - 4px) !important;
+    height: calc(50% - 4px) !important;
+  }
+
+  .hero-bg-image:nth-child(4) {
+    background-position: 80% center !important;
+  }
+  
+  .home-hero__content {
+    padding: 25px;
+  }
+  
+  .home-hero__kicker {
+    font-size: 14px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .home-hero__title-main {
+    font-size: clamp(32px, 5vw, 48px);
+  }
+  
+  .home-hero__title-accent {
+    font-size: clamp(36px, 6vw, 56px);
+  }
+  
+  .home-hero__subtitle {
+    font-size: 16px;
+    max-width: 600px;
+  }
+  
+  .home-hero__btn {
+    padding: 15px 45px;
+    font-size: 16px;
+  }
+  
+  .showcase-grid {
+    padding: 60px 0 80px;
+  }
+  
+  .grid-3-cols {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .second-row {
+    margin-top: 20px;
+  }
+  
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+  
+  .item-media {
+    height: 180px;
+  }
+  
+  .item-content h3 {
+    font-size: 18px;
+  }
+  
+  .item-content p {
+    font-size: 13px;
+  }
+}
+
+/* Mobile (480px) */
+@media screen and (max-width: 480px) {
+  .home-hero {
+    min-height: 500px;
+  }
+  
+  .hero-background-grid {
+    gap: 5px;
+    padding: 5px;
+  }
+  
+  .hero-bg-image {
+    width: calc(50% - 2.5px) !important;
+    height: calc(50% - 2.5px) !important;
+  }
+
+  .hero-bg-image:nth-child(4) {
+    background-position: 80% center !important;
+  }
+  
+  .home-hero__content {
+    padding: 20px;
+  }
+  
+  .home-hero__kicker {
+    font-size: 12px;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+  }
+  
+  .home-hero__title-main {
+    font-size: clamp(26px, 6vw, 36px);
+    letter-spacing: 2px;
+  }
+  
+  .home-hero__title-accent {
+    font-size: clamp(30px, 7vw, 42px);
+    letter-spacing: 2px;
+  }
+  
+  .home-hero__subtitle {
+    font-size: 15px;
+    margin-bottom: 30px;
+    line-height: 1.6;
+  }
+  
+  .home-hero__btn {
+    padding: 12px 35px;
+    font-size: 15px;
+  }
+  
+  .showcase-grid {
+    padding: 40px 0 60px;
+  }
+  
+  .grid-3-cols {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .second-row {
+    margin-top: 0;
+  }
+  
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  
+  .section-title::after {
+    width: 60px;
+    height: 3px;
+  }
+  
+  .item-media {
+    height: 200px;
+  }
+  
+  .item-badge {
+    top: 12px;
+    left: 12px;
+    padding: 5px 12px;
+    font-size: 10px;
+  }
+  
+  .item-content {
+    padding: 20px 15px 15px;
+  }
+  
+  .item-content h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+  
+  .item-content p {
+    font-size: 13px;
+    margin-bottom: 15px;
+  }
+}
+
+/* Mobile piccolo (360px) */
+@media screen and (max-width: 360px) {
+  .home-hero {
+    min-height: 450px;
+  }
+  
+  .hero-background-grid {
+    gap: 3px;
+    padding: 3px;
+  }
+  
+  .hero-bg-image {
+    width: calc(50% - 1.5px) !important;
+    height: calc(50% - 1.5px) !important;
+  }
+
+  .hero-bg-image:nth-child(4) {
+    background-position: 80% center !important;
+  }
+  
+  .home-hero__content {
+    padding: 15px;
+  }
+  
+  .home-hero__kicker {
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+  }
+  
+  .home-hero__title-main {
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+  
+  .home-hero__title-accent {
+    font-size: 26px;
+    letter-spacing: 1px;
+  }
+  
+  .home-hero__subtitle {
+    font-size: 13px;
+    margin-bottom: 25px;
+  }
+  
+  .home-hero__btn {
+    padding: 10px 30px;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  
+  .showcase-grid {
+    padding: 30px 0 40px;
+  }
+  
+  .container {
+    padding: 0 15px;
+  }
+  
+  .section-title {
+    font-size: 20px;
+    margin-bottom: 25px;
+  }
+  
+  .item-media {
+    height: 180px;
+  }
+  
+  .item-badge {
+    padding: 4px 10px;
+    font-size: 9px;
+  }
+  
+  .item-content h3 {
+    font-size: 16px;
+  }
+  
+  .item-content p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+  
+  .item-link {
+    font-size: 12px;
+  }
+}
